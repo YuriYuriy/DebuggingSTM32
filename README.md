@@ -1,8 +1,8 @@
 # Debugging-STM32
-The material for my YouTube video: 
+##The material for my YouTube video: 
 
 
-It is necessary to install:
+##It is necessary to install:
 ```
 sudo apt update
 ```
@@ -11,7 +11,7 @@ sudo apt install openocd gdb-multiarch binutils-multiarch
 ```
 
 
-Function for working with printf():
+##Function for working with #printf():
 ```
 int _write(int file, char *ptr, int len)
 {
@@ -24,7 +24,7 @@ int _write(int file, char *ptr, int len)
 ```
 
 
-Launch Commands:
+##Launch Commands:
 ```
 mkfifo -m 600 swo.fifo
 ```
