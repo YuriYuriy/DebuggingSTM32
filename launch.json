@@ -1,0 +1,38 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        
+        {
+            "name": "Debug (OpenOCD + SWO)",
+            "cwd": "${workspaceFolder}",
+            "type": "cortex-debug",
+            "request": "launch",
+            "executable": "./build/Debug/STM32F103C8T6_Blink.elf", // Укажите путь к вашему .elf файлу
+            "servertype": "openocd",
+            "configFiles": [
+                "interface/stlink.cfg",      // Конфиг для ST-Link
+                "target/stm32f1x.cfg"        // Конфиг для семейства STM32F1
+            ],
+            "device": "STM32F103",           // Укажите вашу модель
+            "interface": "swd",
+            "runToEntryPoint": "main",
+            "svdFile": "${workspaceFolder}/STM32F103.svd", // Опционально: для просмотра регистров
+            "serverpath": "/usr/bin/openocd",
+            "gdbPath": "/usr/bin/gdb-multiarch",
+            "swoConfig": {
+                "enabled": true,
+                "cpuFrequency": 72000000,    // Тактовая частота вашего МК: 72 МГц
+                "swoFrequency": 1000000,     // Частота SWO (например, 1 МГц)
+                "source": "probe",
+                "decoders": [
+                    {
+                        "type": "console",
+                        "label": "ITM Output",
+                        "port": 0,           // Порт ITM для printf
+                        "encoding": "ascii"
+                    }
+                ]
+            }
+        }
+    ]
+}
