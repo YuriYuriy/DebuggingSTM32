@@ -30,6 +30,7 @@ cleanup() {
 trap cleanup EXIT INT TERM
 
 # SWO с таймстампом в UTC
+#ЭТА ЧАСТЬ МОЖЕТ НЕ РАБОТАТЬ
 stdbuf -oL cat "$FIFO" | while IFS= read -r line; do
     echo "[$(date -u '+%H:%M:%S UTC')] $line"
 done
