@@ -24,7 +24,7 @@ int _write(int file, char *ptr, int len)
 ```
 
 
-Launch Commands:
+Launch commands:
 ```
 mkfifo -m 600 swo.fifo
 ```
