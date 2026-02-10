@@ -1,4 +1,4 @@
-# Debugging-STM32
+# DebuggingSTM32
 The material for my YouTube video: 
 
 
