@@ -11,7 +11,7 @@ sudo apt install openocd gdb-multiarch binutils-multiarch
 ```
 
 
-Printf() function for operation:
+Function for working with printf():
 ```
 int _write(int file, char *ptr, int len)
 {
